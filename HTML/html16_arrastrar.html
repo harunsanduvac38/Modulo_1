@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar y Soltar</title>
+    <style>
+        *{
+            border-radius: 6px;
+            margin :auto;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(177, 177, 177);
+            padding: 10px 10px;
+            border-radius: 9px;
+            width: 880px;
+        }
+        img{
+            width: 150px;
+            border-style: inherit;
+            border: 1px solid;
+        }
+        .destino{
+            background-color: rgb(177, 177, 177);
+            width: 250px;
+            height: 400px;
+            padding: 15px 5px;
+            float: left;
+            margin: 15px 25px;
+            border: 3px solid;
+            border-style: groove;
+            text-align: center;
+        }
+        .movil{
+            margin: 20px auto;
+            border: 1px solid;
+            padding: 3px;
+        }
+    </style>
+    <script>
+
+        function iniciar(ev){
+            ev.dataTransfer.setData('movilId', ev.currentTarget.id);
+        }
+
+        function arrastrar(ev){
+            ev.preventDefault(); // No te comportes con tu comportamiento por defecto;
+        };
+
+        function soltar(ev){
+            let movil = document.getElementById(ev.dataTransfer.getData('movilId'));
+            let destino = ev.currentTarget;
+            destino.appendChild(movil);
+        };
+
+        window.onload = function(){
+            // let moviles = document.getElementsByClassName("movil");
+            let moviles = document.querySelectorAll('.movil');
+            // moviles[0].ondragstart = iniciar;
+            for(let i = 0; i< moviles.length; i++){
+                moviles[i].ondragstart = iniciar;
+            }
+
+            let destinos = document.querySelectorAll('.destino');
+            for(let i = 0; i < destinos.length; i++){
+                // destinos[i].ondragover = arrastrar;
+                destinos[i].addEventListener('dragover', arrastrar);
+                destinos[i].addEventListener('drop', soltar);
+            }
+
+        };
+
+    </script>
+</head>
+<body>
+    <h1>Arrastrar y Soltar</h1>
+    <div class="destino">
+        <div id="movil1" class="movil"><img src="img/img2.jpg" alt="El Lago"></div>
+        <div id="movil2" class="movil"><img src="img/img3.jpg" alt="La cascada"></div>
+        <div id="movil3" class="movil"><img src="img/img4.jpg" alt="El Camino"></div>
+    </div>
+    <div class="destino">
+
+    </div>
+    <div class="destino">
+
+    </div>
+</body>
+</html>

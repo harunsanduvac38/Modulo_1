@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clienteas</title>
+<style>
+body{
+  background-color: #cacaca;
+}
+#tablaDatos{
+  width: 50%;
+  border: 2px solid navy;
+  font-family: Helevetica, Arial;
+  margin: 5px auto;
+  box-shadow: 15px 15px 10px gray;
+}
+#tablaDatos caption{
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 10px;
+}
+#tablaDatos thead th, #tablaDatos tfoot td{
+  background-color: navy;
+  color: white;
+  font-size: 1.2em;
+  text-align: left;
+}
+td, th{
+  padding: 5px 7px;;
+}
+#tablaDatos td:nth-child(4), #tablaDatos th:nth-child(4){
+  text-align: right;
+}
+#tablaDatos tbody tr:nth-child(odd){
+  background-color:#a8a8a8; 
+}
+#tablaDatos tbody tr:hover{
+  background-color: gray;
+  color: white;
+}
+</style>
+</head>
+<body>
+    <table id="tablaDatos">
+        <caption>Listado Clientes</caption>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Ciudad</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- tr#fila$*5>td*4 -->
+            <tr id="fila1">
+                <td>Jorge</td>
+                <td>Martinez</td>
+                <td>Madrid</td>
+                <td>1.756,48</td>
+            </tr>
+            <tr id="fila2">
+                <td>María</td>
+                <td>Jimenez</td>
+                <td>Córdoba</td>
+                <td>456,00</td>
+            </tr>
+            <tr id="fila3">
+                <td>Pedro</td>
+                <td>Soto</td>
+                <td>Barcelona</td>
+                <td>4.500,00</td>
+            </tr>
+            <tr id="fila4">
+                <td>Alicia</td>
+                <td>Bermudez</td>
+                <td>Málaga</td>
+                <td>578,00</td>
+            </tr>
+            <tr id="fila5">
+                <td>Federico</td>
+                <td>López</td>
+                <td>Madrid</td>
+                <td>12.345,00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Cantidad clientes: 5</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

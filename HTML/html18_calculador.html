@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+
+<style>
+    body{
+        background-color: rgb(92, 92, 92);
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #calc{
+        text-align: center;
+    }
+    #contPrincipal{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        border: 5px groove;
+        padding: 10px;
+        grid-gap: 12px;
+        grid-auto-rows: 30px;
+        width: 300px;
+        border-radius: 16px;
+        background-color: rgb(87, 113, 132);
+        margin: auto auto;
+    }
+    #resultado{
+        grid-area: 1/1/3/6;
+        text-align: right;
+        border: 5px groove;
+        padding: 10px 10px;
+        border-radius: 5px;
+        height: 30px;
+        font-size: 20px;
+        background-color: rgb(173, 173, 173);
+        grid-gap: 5px;
+    }
+   
+    .clear{
+        grid-column-start: 3;
+        grid-column-end: 6;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    #num4{
+        grid-area: 5/1/6/2;
+    }
+    #num5{
+        grid-area: 5/2/6/3;
+    }
+    #num6{
+        grid-area: 5/3/6/4;
+    }
+    #num1{
+        grid-area: 6/1/7/2;
+    }
+    #num2{
+        grid-area:6/2/7/3;
+    }
+    #num3{
+        grid-area: 6/3/7/4;
+    }
+    #num0{
+        grid-area: 7/2/8/3;
+    }
+    #goma{
+        grid-area: 7/1/8/2;
+    }
+   
+    #num7{
+        grid-area: 4/1/5/2;
+    }
+    #num8{
+        grid-area: 4/2/5/3;
+    }
+    #num9{
+        grid-area: 4/3/5/4;
+    }
+    #sumar{
+        grid-area: 4/4/7/5;
+    }
+    #restar{
+        grid-area: 4/5/5/6;
+    }
+    #multiplicar{
+        grid-area: 5/5/6/6;
+    }
+    #dividir{
+        grid-area: 6/5/7/6;
+    }
+    #igual{
+        grid-area: 7/4/7/6;
+    }
+    button{
+        border-radius: 5px;
+        gap: 10px;
+    }
+    button:hover{
+        background-color: azure;
+    }
+
+</style>
+
+<script>
+    let num1 = '', op = "";
+    let gomaOk=true;
+
+    window.onload = function(){
+        num = document.getElementsByClassName("numeros");
+        for(let i = 0; i < num.length; i++){
+            num[i].onclick=click1;
+        }
+
+        operar = document.getElementsByClassName("operadores");
+        
+        for(let i = 0; i < operar.length; i++){
+            operar[i].onclick = click2;
+        }
+        
+        document.getElementById('igual').onclick = calcular;
+        document.getElementById("btn16").onclick = rst;
+        document.getElementById('goma').onclick = decimal;  
+    }
+
+    function click1(ev){
+        num1 += Number(ev.currentTarget.textContent);
+        document.getElementById('resultado').textContent = num1;        
+    }
+    
+    function click2(ev){
+        if(isNaN(num1[num1.length-1])){
+            op = ev.currentTarget.textContent;
+            num1=num1.slice(0,-1);
+            num1 +=op;
+            document.getElementById('resultado').textContent = num1;
+            gomaOk=true; 
+            console.log(num1.length);
+        }else{
+            op = ev.currentTarget.textContent;
+            num1 +=op;
+            document.getElementById('resultado').textContent = num1;
+            gomaOk=true; 
+            console.log(num1);
+        }
+    }
+    
+    function calcular() {
+        document.getElementById('resultado').textContent = eval(num1);
+        num1= eval(num1);
+    }
+
+    function rst() {
+        num1 = "";
+        op="";
+        document.getElementById('resultado').textContent = num1;
+    }
+    
+
+    function decimal() {
+        if(gomaOk==true){;
+            num1+= ".";
+            document.getElementById('resultado').textContent = num1;
+            gomaOk=false;
+        }
+    }
+    
+</script>
+
+<body>
+    <h1 id="calc">CALCULADORA</h1>
+    <div id="contPrincipal">
+        <p style="font-size: small;">CASIO</p>
+        <p id="resultado">0.0</p>
+
+        <button id="num7" class="numeros"> 7</button>
+        <button id="num8" class="numeros"> 8</button>
+        <button id="num9" class="numeros"> 9</button>
+        <button id="num4" class="numeros"> 4</button>
+        <button id="num5" class="numeros"> 5</button>
+        <button id="num6" class="numeros"> 6</button>
+        <button id="num1" class="numeros"> 1</button>
+        <button id="num2" class="numeros"> 2</button>
+        <button id="num3" class="numeros"> 3</button>
+        <button id="num0" class="numeros"> 0</button>
+        <button id="goma" >,</button>
+
+        <button id="btn16" class="clear">C</button>
+
+        <button id="sumar" class="operadores">+</button>
+        <button id="restar" class="operadores">-</button>
+        <button id="multiplicar" class="operadores">*</button>
+        <button id="dividir" class="operadores">/</button>
+        <button id="igual" class="operadores">=</button>
+    
+
+    </div>
+</body>
+</html>

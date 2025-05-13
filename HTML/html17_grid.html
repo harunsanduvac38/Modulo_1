@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<style>
+   
+    .contenedor{
+        border: 4px groove rgb(0, 67, 103);
+        display: grid;
+        padding: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 60px;
+        grid-gap: 5px;
+    }
+
+    .contenedor > div{
+        border: 2px solid;
+        padding: 7px;
+        background-color: #006cc4;
+    }
+
+    #caja1{
+        /* grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 4; hasta aquí es misma con los siguentes */
+        /* grid-row: 1/3;
+        grid-column: 1/4; este también es misma cn los  */
+        grid-area: 1/1/3/4;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+    }
+    #caja1 > div{
+        border: 2px solid black;
+    }
+    #caja2{
+        grid-area: 3/1/5/2;
+    }
+
+    
+
+</style>
+
+
+<body>
+    <div class="contenedor">
+        <div id="caja1">
+            <div id="caja1_1">Caja 1 1</div>
+            <div id="caja1_2">Caja 1 2</div>
+            <div id="caja1_3">Caja 1 3</div>
+            <div id="caja1_4">Caja 1 4</div>
+            <div id="caja1_5">Caja 1 5</div>
+            <div id="caja1_6">Caja 1 6</div>
+            Primero
+        </div>
+        <div id="caja2">Segundo</div>
+        <div id="caja3">Tercero</div>
+        <div id="caja4">Cuarto</div>
+        <div id="caja5">Quinto</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            background-color: rgb(71, 70, 70);
+        }
+        h1{
+            text-decoration:underline;
+            box-shadow:  10px 5px 9px;
+            border-radius: 8px;
+            background-color: rgb(131, 128, 126);
+            padding: 10px;
+        }
+       #contPrincipal{
+        margin: 10% 10%;
+        background-color: rgb(209, 209, 209);
+        padding: 20px 20px;
+        border: 1px solid;
+        border-radius: 9px;
+        text-align: center;
+        box-shadow: 5px 5px 5px;
+        text-shadow: 1px 1px 2px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        width: 700px;
+        height: 300px;
+        align-items: center;
+       } 
+       #final, #resultado{
+        display:inline;
+       }
+       footer{
+        text-align: end;
+        font-size: small;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+    </style>
+
+    <script>
+        window.onload =function(){
+            document.getElementById('btnCalcular').onclick = calcular;
+        }
+        function calcular(){
+            let v1 = Number(document.getElementById("v1").value);
+            let v2 = Number(document.getElementById('v2').value);
+            let op = document.getElementById("operador").value;
+            let result;
+            switch (op){
+                case "+":
+                    result = v1 + v2;
+                    break;
+                case "-":
+                    result = v1 - v2;
+                    break;
+                case "*":
+                    result = v1 * v2;
+                    break;
+                case "/":
+                    result = v1 / v2;
+                    if(v2 == 0){
+                        alert("Valor Indefinido");
+                    }
+                    break;
+            }
+            document.getElementById("resultado").textContent = result;
+            let final = `${v1} ${op} ${v2} = `;
+            document.getElementById("final").textContent = final;
+        }
+
+    
+    </script>
+</head>
+<body>
+   <div id="contPrincipal">
+        <h1>Super Calculadora</h1>
+            <label for="v1">Valor 1</label>
+            <input id="v1" type="number" name="v1">
+
+            <p id="opr"></p>
+            <label for="operador">Operador</label>
+            <select name="operador" id="operador">
+                <option value="+">Suma</option>
+                <option value="-">Resta</option>
+                <option value="/">Division</option>
+                <option value="*">Producto</option>            
+            </select>
+            </p>
+
+            <label for="v2">Valor 2</label>
+            <input id="v2" type="number" name="v2">
+            <p>
+            <button id="btnCalcular">Calcula</button>
+            </p>
+        <p id="final"> </p>
+        <p id="resultado"></p>
+   </div>
+</body>
+<footer>
+    <p>All right reserverd.</p>
+    <p>by HARUN</p>
+</footer>
+</html>

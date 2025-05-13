@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes!</title>
+    <style>
+        body{
+            background-color: rgb(240, 160, 160);
+        }
+        #tablaDatos{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border: 1px solid rgb(40, 123, 168);
+            border-radius: 7px;
+            width: 70%;
+            margin: 5px auto;
+            box-shadow: 15px 15px 10px;
+            background-color: rgb(2, 64, 98);
+        }
+        #tablaDatos caption{
+            font-size: 2em;
+            background-color: rgb(1, 87, 140);
+            border-radius: 50px;
+            font-style: bold;
+            margin: 10px 10px;
+            padding: 5px 5px;
+            box-shadow: 3px 3px 10px;
+            color: rgb(171, 194, 194);
+        }
+        #tablaDatos thead tr th, #tablaDatos tfoot td{
+            background-color: rgb(58, 125, 162);
+            text-align: left;
+        }
+        /* #tablaDatos tbody td{
+            background-color: rgb(177, 186, 186);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        } */
+        #td, th{
+            padding: 5px 7px;
+        }
+        #tablaDatos td:nth-child(4), #tablaDatos th:nth-child(4), #tablaDatos tfoot td:nth-child(2){
+            text-align: right;
+        }
+        #tablaDatos tbody tr:nth-child(odd){
+            background-color: #b8b8bb;
+        }
+        #tablaDatos tbody tr:hover{
+            background-color: rgb(244, 140, 28);
+            color: rgb(41, 41, 41);
+        }
+    </style>
+</head>
+<body>
+   <table id="tablaDatos">
+        <caption>Listado Clientes</caption>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Ciudad</th>
+                <th>Saldo (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="fila1">
+                <td>Harun</td>
+                <td>Sanduvac</td>
+                <td>Madrid</td>
+                <td>500,00€</td>
+            </tr>
+            <tr id="fila2">
+                <td>Pablo</td>
+                <td>Gonzalez</td>
+                <td>Madrid</td>
+                <td>750,00€</td>
+            </tr>
+            <tr id="fila3">
+                <td>Ana Marisol</td>
+                <td>Maria Jose</td>
+                <td>Barcelona</td>
+                <td>1.000,00€</td>
+            </tr>
+            <tr id="fila4">
+                <td>Pio Saturnino</td>
+                <td>Gonzalez </td>
+                <td>Toledo</td>
+                <td>75.000,00€</td>
+            </tr>
+            <tr id="fila5">
+                <td>Mustafa</td>
+                <td>Sanduvac</td>
+                <td>Kayseri</td>
+                <td>20.000,00€</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Clientes: 5</td>
+                <td>Saldo Total: 97.250€</td>
+            </tr>
+        </tfoot>
+   </table>
+    
+</body>
+</html>

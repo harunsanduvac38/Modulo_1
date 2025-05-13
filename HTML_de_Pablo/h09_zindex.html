@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#contPrincipal{
+  background-color: #d5d5d5;
+  border: 3px solid;
+  padding: 55px;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+#contPrincipal div{
+  border: 1px solid;
+  padding: 30px;
+  margin: 15px;
+  position: absolute;
+  opacity: 0.8;
+}
+#caja1{
+  background-color: red;
+  top: 15px;
+  left: 15px;
+}
+#caja2{
+  background-color: blue;
+  top: 30px;
+  left: 30px;
+}
+#caja3{
+  background-color: green;
+  top: 45px;
+  left: 45px;
+}
+#caja4{
+  background-color: yellow;
+  top: 60px;
+  left: 60px;
+}
+</style>
+<script>
+    let z = 1;
+
+    function traerAlFrente(evento) {
+      let cajaActual = evento.currentTarget;
+      cajaActual.style.zIndex = z++;
+    }
+
+    window.onload = function() {
+        let cajas = document.getElementsByClassName('cajas');
+        for (let i = 0; i < cajas.length; i++) {
+          cajas[i].onclick = traerAlFrente;
+        }
+    };
+</script>
+<body>
+    <!-- div#contPrincipal>div#caja$*4.cajas>p>{Caja$} -->
+    <div id="contPrincipal">
+      <div id="caja1" class="cajas">
+        <p>Caja1</p>
+      </div>
+      <div id="caja2" class="cajas">
+        <p>Caja2</p>
+      </div>
+      <div id="caja3" class="cajas">
+        <p>Caja3</p>
+      </div>
+      <div id="caja4" class="cajas">
+        <p>Caja4</p>
+      </div>
+    </div>
+</body>
+</html>

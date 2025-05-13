@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body{
+            background-color: #767474;
+        }
+    </style>
+</head>
+<body>
+    <div id="contPrincipal">
+        <form action="recepcion_datos">
+            <p>
+            <label for="ape">Apellido</label>
+            <input type="text" name="ape" required placeholder="Primer Apellido">
+            </p>
+            <label for="pwd"> Password</label>
+            <input type="password" name="pwd" placeholder="Password">
+            <p>
+            <label for="anyo">Año nacimiento</label>
+            <input type="number" value="2000" min="1998" max="2006" step="1">
+            </p>
+            <label for="fecha">Fecha de Ingreso</label>
+            <input type="date" name="fecha">
+            <p>
+            <label for="">Email</label>
+            <input type="email" placeholder="email">
+            </p>
+            <label for="publicidad">Acepta el envío de publicidad</label>
+            <input type="checkbox" name="publicidad">
+
+            <div>
+                <p>Estado civil</p>
+                <input type="radio" name="estadoCivil" value="s" checked>
+                <label >Soltero</label>
+                <input type="radio" name="estadoCivil" value="c">
+                <label >Casado</label>
+                <input type="radio" name="estadoCivil" value="o">
+                <label >Otro</label>
+
+            </div>
+            <input type="text" placeholder="Código Postal" pattern="[0-9]{5}">
+            <p>
+            <label for="">Semana</label>
+            <input type="week">
+            </p>
+            <p>
+            <label for="">Hora</label>
+            <input type="time">
+            </p>
+            <p>
+            <label for="prov" >Provincia</label>
+            <select name="prov">
+                <option value="38">Kayseri</option>
+                <option value="28">Madrid</option>
+                <option value="15">Barcelona</option>
+                <option value="11">Toledo</option>
+            </select>
+            </p>
+            <p>
+            <label for="aficiones">Aficiones</label>
+            <select name="aficiones" multiple>
+                <option value="1">Arte</option>
+                <option value="2">Lectura</option>
+                <option value="3">Deporte</option>
+                <option value="4">Cine</option>
+                <option value="5">Otro</option>
+            </select>
+            </p>
+
+            <div>
+                <label for="fichero">Seleccion Fichero</label>
+            <input type="file" name="fichero">
+            </div>
+            <p>
+            <button type="submit">Enviar</button>
+            <button type="reset">Reset</button>
+        </p>
+        </form>
+    </div>
+</body>
+</html>

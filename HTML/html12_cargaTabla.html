@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Tabla</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btnIns").onclick = insertar;
+        }
+
+        function insertar(){
+            let nombre = document.getElementById("nombre");
+            let apellido = document.getElementById("apellido");
+
+            //Usamos selector del CSS en Javascript y eligemos tbody
+            let tbody = document.querySelector('#tblColegas tbody');
+            //creamos un nuevo tag tr (fila)
+            let tr = document.createElement('tr');
+            //el tbody pasa a ser el padre del nuevo tr
+            tbody.appendChild(tr);
+            //creamos un nuevo tag td (celda)
+            let tdNombre = document.createElement('td');
+            //al ttd le ponemos como texto el nombre extraido del input
+            tdNombre.textContent = nombre.value;
+            //el tr que creamos pase a ser el padre del nuevo td
+            tr.appendChild(tdNombre);
+            let tdApellido = document.createElement('td');
+            tr.appendChild(tdApellido);
+            tdApellido.textContent = apellido.value;
+            nombre.value='';
+            apellido.value='';
+        }
+
+    </script>
+    <style>
+        body{
+            background-color: rgb(53, 52, 51);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(110, 112, 114);
+            border-radius: 7px;
+            margin: 30px auto;
+            box-shadow: 3px 3px 8px;
+            width: 500px;
+            
+        }
+        #tblColegas{
+            background-color: rgb(44, 43, 43);
+            width: 60%;
+            margin: 40px auto;
+            border: 1px solid;
+            border-radius: 5px;
+            box-shadow: 3px 3px 15px;
+        }
+        td{
+            background-color: rgb(129, 129, 152);
+            border: 1px solid;
+            border-radius: 3px;
+        }
+        th{
+            border: 1px solid;
+            border-radius: 3px;
+        }
+        #divIngreso{
+            text-align: center;
+            border-radius: 5px;
+        }
+        input{
+            background-color: rgb(190, 188, 188);
+            border-radius: 5px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Carga Datos</h1>
+    <div id="divIngreso">
+        <label>Nombre</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <label>Apellido</label>
+        <input type="text" placeholder="Apellido" id="apellido">
+
+        <button id="btnIns">Insertar</button>
+    </div>
+
+    <table id="tblColegas">
+        
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <!-- <tr>
+                <td id="nombreTabla">Harun</td>
+                <td id="apellidoTabla">Sanduvac</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>

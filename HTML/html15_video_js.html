@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO</title>
+    <script>
+        let video;
+        let btnPlay;
+        function playPause(){
+            if(video.paused){
+                video.play();
+                btnPlay.textContent = "Pause";
+            }else{
+                video.pause();
+                btnPlay.textContent = "Play";
+            }
+        }
+
+        function cambio(){
+            let t = document.getElementById('tiempo');
+            t.textContent = 'Tiempo : ' + Math.floor(video.currentTime, 2) + ' S'
+        }
+        window.onload = function(){
+            video = document.getElementById('video');
+            video.onclick = playPause;
+            video.ontimeupdate = cambio;
+            btnPlay = document.getElementById('btnPlay');
+            btnPlay.onclick = playPause;
+        }
+
+    </script>
+
+    <style>
+        *{
+            background-color: rgb(130, 130, 131);
+            text-decoration: underline;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #contPrincipal{
+            margin: 20px auto;
+            width: 90%;
+            text-align: center;
+            border: groove;
+            padding: 20px;
+            
+        }
+        video{
+            width: 70%;
+            border-radius: 5px;
+        }
+        button{
+            border-radius: 10px;
+            padding: 8px 10px;
+        }
+        #btnPlay:hover{
+            background-color: rgb(233, 233, 233);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="contPrincipal">
+        <video id="video">
+            <source src="videos/Haka.mp4">
+            <source src="videos/Haka.ogv">
+        </video>
+        <div>
+            <button id="btnPlay">Play</button>
+            <div id="tiempo"> 0 s</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+
+    <style>
+        body{
+            background-color: rgb(202, 202, 202);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #contPrincipal{
+            background-color: rgb(163, 163, 163);
+            margin: 30px auto;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid;
+            width: 500px;
+            padding: 10px 10px;
+        }
+        .resultado{
+            background-color: (163, 163,163,163);
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 5px;
+            width: 400px;
+            padding: 3px 3px;
+        }
+
+    </style>
+
+    <script>
+
+        let numero;
+        
+
+        function inicio(){
+            document.getElementById("clasificar").onclick = calcula;
+
+        }
+
+        function calcula(){
+            numero = document.getElementById("ingreso").value;
+            let dgts=0;
+           
+            if(numero%2 == 0){
+                document.getElementById("par").textContent = "Es par."
+            }else{
+                document.getElementById("par").textContent = "Es impar."
+            }
+
+            if(numero>0){
+                document.getElementById("positivo").textContent = "Es positivo."
+            }else{
+                if(numero==0){
+                    document.getElementById("positivo").textContent = "Es neutro."
+                }else{
+                document.getElementById("positivo").textContent = "Es negativo."
+                }
+            }
+
+            if(numero%3 == 0){
+                document.getElementById("multiplo").textContent = "Es multiplo de 3"
+            }else{
+                document.getElementById('multiplo').textContent = "No es multiplo de 3"
+            }
+
+                while(numero !=0){
+                    dgts++;
+                    numero = Math.trunc(numero/10);   
+                }
+            
+            document.getElementById('digitos').textContent = "Tiene " + dgts + " digitos";
+            
+            
+        }
+
+        window.onload = inicio;
+
+    </script>
+
+
+</head>
+<body>
+    <div id="contPrincipal">
+        <h1>Ejercicio 3</h1>
+        <h2>Indicar la característica de un núnero</h2>
+
+        <label for="num">Ingresa un valor entero </label>
+        <input type="number" name="num" id="ingreso" placeholder="0" required>
+        <button id="clasificar">Clasificar</button>
+    </div>
+    <div id="par" class="resultado"></div>
+    <div id="positivo" class="resultado"></div>
+    <div id="multiplo" class="resultado"></div>
+    <div id="digitos" class="resultado"></div>
+</body>
+</html>

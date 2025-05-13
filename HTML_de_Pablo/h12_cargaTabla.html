@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{
+  font-family: Helvetica, Arial;
+}
+
+h1{
+  text-align: center;
+}
+#divIngreso{
+  text-align: center;
+}
+
+#tblColegas{
+  width: 400px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#tblColegas td, #tblColegas th{
+  border: 1px solid;
+  padding: 5px;
+}
+</style>
+<script>
+    function insertar(){
+        let nombre = document.getElementById('nombre');
+        let apellidos = document.getElementById('apellidos');
+        
+        let tbody = document.querySelector('#tblColegas tbody');
+
+        //creamos un nuevo tag tr (fila)
+        let tr = document.createElement('tr');
+
+        //el tbody pasa a ser el padre del nuevo tr
+        tbody.appendChild(tr);
+
+        //creamos un nuevo tag td (celda)
+        let tdNombre = document.createElement('td');
+        
+        //al td le ponemos como texto el nombre extraido del input
+        tdNombre.textContent = nombre.value;
+
+        //el tr que creamos pase a ser el padre del nuevo td
+        tr.appendChild(tdNombre);
+
+        let tdApe = document.createElement('td');
+        tdApe.textContent = apellidos.value;
+        tr.appendChild(tdApe);
+        nombre.value='';
+        apellidos.value='';
+    }
+
+    window.onload = function(){
+        document.getElementById('btnIns').onclick = insertar;
+    };
+</script>
+</head>
+<body>
+    <h1>Carga datos</h1>
+    <div id="divIngreso">
+        <label>Nombre</label>
+        <input type="text" id="nombre">
+        
+        <label>Apellidos</label>
+        <input type="text" id="apellidos">
+
+        <button id="btnIns">Insertar</button>
+    </div>
+    <table id="tblColegas">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>Juan</td>
+                <td>Jimenez</td>
+            </tr> -->
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Login</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgba(116, 116, 116, 0.533);
+        }
+        .contPrincipal{
+            border-radius: 10px;
+            padding: 10px 10px;
+            border-style: groove;
+            border-width: 9px;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            background-image: linear-gradient(rgb(217, 217, 217), rgb(80, 80, 80));
+            box-shadow: 0px 0px 20px black;
+        
+        }
+        input{
+            padding: 7px 10px;
+            border-radius: 4px;
+            background-color: rgb(226, 226, 226);
+            width: 40%;
+        }
+        .titulo{
+            margin: 50px 50px;
+            text-align: center;
+            text-shadow: 0px 0px 10px black;
+        }
+        button{
+            background-color: rgb(24, 24, 31);
+            color: aliceblue;
+            border-radius: 5px;
+            width: 40%;
+        }
+        button:hover{
+            background-color: rgb(230, 230, 230);
+            color: rgb(61, 61, 61);
+        }
+
+        a{
+            color: rgb(66, 66, 66);
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="titulo">
+    <h1>Login</h1>
+    </div>
+    <div class="contPrincipal">
+        <form action="http://10.1.2.10:8080/mi_app/login" method="post">
+
+            <input type="text" placeholder="Usuario" name="usuario" required>
+
+            <p></p>
+            <input type="password" name="password" placeholder="Password" required>
+            <p></p>
+            <button type="submit">Login</button>
+            <p></p>
+            <a href="http://10.1.2.10:8080/mi_app/password" target="_blank">He olvidado mi Contraseña.</a>
+        </form>
+    </div>
+</body>
+</html>

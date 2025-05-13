@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript </title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Selector de etiqueta */
+        h5 {
+            color:goldenrod;
+            font-size: medium;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* selector de id */
+        #subtitulo_primario{
+            width:60%;
+            background-color: rgb(32, 27, 6);
+            color:rgb(115, 218, 115);
+            padding: 50px;
+            margin:50px auto;
+        }
+    </style>
+    <script>
+        let secun;
+        let primer;
+        function inicio(){
+           secun = document.getElementById("subtitulo_secundario");
+           secun.onclick = click_secun;
+        }
+        function click_secun(){
+            //alert("Hiciste click! HEYYY");
+            secun.innerText = "Vas a hacer click aquí";
+        }
+
+        window.onload = inicio;
+
+    </script>
+</head>
+<body>
+    <h1>Titulo Principal (H1)</h1>
+    <h2> Esto es un h2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero magni nulla incidunt, sequi ut unde.
+    </p>
+    <h5 id="subtitulo_secundario">Este es h5 ahora estoy escribiendo</h5>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, repellendus?</p>
+    <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p> -->
+    <h6>Esto es h6</h6>
+    <h2 id="subtitulo_primario">Este es un h2</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi itaque ipsa harum molestias cum voluptatum reiciendis labore nulla ad pariatur.</p>
+    <p><mark>Esto es otro parrafo que tiene texto resaltada</mark></p>
+    <p><strong>Esto texto es strong</strong></p>
+    <p><em>Esto es énfasis.</em></p>
+    <h5>Esto es otro h5 e igual con la otra</h5>
+    <h2>Este es otro h2</h2>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contPrincipal">
+        <form action="recepcion_datos" method="get">
+            <label for="ape">Apellidos</label>
+            <input type="text" name="ape" required placeholder="Ingresa tu apellido">
+
+            <input type="password" name="pwd" placeholder="Password">
+
+            <label for="anyo">Año nacimiento</label>
+            <input type="number" value="2000" min="2000" max="2020" step="2">
+
+            <label for="fecha">Fecha de Ingreso</label>
+            <input type="date" name="fecha">
+
+            <input type="email" placeholder="email">
+
+            <input type="checkbox" name="publicidad" value="acepta">
+            <label for="publicidad">Acepta el envío de publicidad</label>
+
+            <div>
+                <p>Estado Civil</p>
+                <input type="radio" name="estadoCivil" value="s" checked>
+                <label >Soltero</label>
+                <input type="radio" name="estadoCivil" value="c">
+                <label >Casado</label>
+                <input type="radio" name="estadoCivil" value="o">
+                <label >Otro</label>
+            </div>
+
+            <input type="text" placeholder="Código postal" pattern="[0-9]{5}">
+
+            <label for="">Semana</label>
+            <input type="week">
+
+            <label for="">Hora</label>
+            <input type="time">
+
+            <label for="prov">Provincia</label>
+            <select name="prov">
+                <option value="28">Madrid</option>
+                <option value="17">Barcelona</option>
+                <option value="45">Toledo</option>
+            </select>
+
+            <label for="aficiones">Aficiones</label>
+            <select name="aficiones" multiple>
+                <option value="1">Lectura</option>
+                <option value="2">Cine</option>
+                <option value="3">Deporte</option>
+                <option value="4">Arte</option>
+            </select>
+
+            <div>
+                <label for="fichero">Seleccion fichero</label>
+                <input type="file" name="fichero">
+            </div>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </div>
+</body>
+</html>
